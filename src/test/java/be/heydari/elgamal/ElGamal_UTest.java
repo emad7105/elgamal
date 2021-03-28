@@ -1,6 +1,5 @@
-package be.kuleuven.crypto.elgamal;
+package be.heydari.elgamal;
 
-import be.kuleuven.crypto.TestContext;
 import com.google.common.base.Charsets;
 import org.bouncycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPrivateKey;
 import org.bouncycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPublicKey;
@@ -14,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.interfaces.DHPublicKey;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;

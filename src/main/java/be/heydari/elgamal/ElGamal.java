@@ -1,4 +1,4 @@
-package be.kuleuven.crypto.elgamal;
+package be.heydari.elgamal;
 
 import org.bouncycastle.crypto.generators.ElGamalParametersGenerator;
 import org.bouncycastle.crypto.params.ElGamalParameters;
@@ -65,18 +65,12 @@ public class ElGamal {
     }
 
     public byte[] encrypt(byte[] data, Key publicKey) throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
-//        Cipher cipher = Cipher.getInstance("ElGamal", "BC");
-//        cipher.init(Cipher.ENCRYPT_MODE, publicKey);
-//        return cipher.doFinal(data);
         ReRandCipherSpi reRandCipherSpi = new ReRandCipherSpi(new ReRandElGamalEngine());
         reRandCipherSpi.engineInit(ReRandElGamalEngine.ElGamalMode.ENCRYPT, publicKey, getRandom());
         return reRandCipherSpi.engineDoFinal(data, 0, data.length);
     }
 
     public byte[] decrypt(byte[] encryptedData, Key privateKey) throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
-//        Cipher cipher = Cipher.getInstance("ElGamal", "BC");
-//        cipher.init(Cipher.DECRYPT_MODE, privateKey);
-//        return cipher.doFinal(encryptedData);
         ReRandCipherSpi reRandCipherSpi = new ReRandCipherSpi(new ReRandElGamalEngine());
         reRandCipherSpi.engineInit(ReRandElGamalEngine.ElGamalMode.DECRYPT, privateKey, getRandom());
         return reRandCipherSpi.engineDoFinal(encryptedData, 0, encryptedData.length);

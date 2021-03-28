@@ -1,4 +1,4 @@
-package be.kuleuven.crypto.elgamal;
+package be.heydari.elgamal;
 
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.DataLengthException;

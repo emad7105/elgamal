@@ -1,4 +1,4 @@
-package be.kuleuven.crypto.elgamal;
+package be.heydari.elgamal;
 
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.InvalidCipherTextException;
@@ -21,6 +21,9 @@ import java.security.spec.AlgorithmParameterSpec;
 
 /**
  * Note: A large portion of this code is based BouncyCastle implementation of the ElGamal scheme.
+ * https://github.com/bcgit/bc-java/blob/master/prov/src/main/java/org/bouncycastle/jcajce/provider/asymmetric/elgamal/CipherSpi.java
+ *
+ * @author Emad Heydari Beni, the randization parts
  */
 public class ReRandCipherSpi extends BaseCipherSpi {
 

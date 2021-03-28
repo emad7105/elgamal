@@ -1,5 +1,7 @@
-package be.kuleuven.crypto.elgamal;
+package be.heydari.elgamal;
 
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.CryptoServicesRegistrar;
 import org.bouncycastle.crypto.DataLengthException;
@@ -8,18 +10,18 @@ import org.bouncycastle.crypto.params.ElGamalPrivateKeyParameters;
 import org.bouncycastle.crypto.params.ElGamalPublicKeyParameters;
 import org.bouncycastle.crypto.params.ParametersWithRandom;
 import org.bouncycastle.util.BigIntegers;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
 /**
  * Note: A large portion of this code is based BouncyCastle implementation of the ElGamal scheme.
+ * https://github.com/bcgit/bc-java/blob/master/core/src/main/java/org/bouncycastle/crypto/engines/ElGamalEngine.java
  * <p>
  * this does your basic ElGamal algorithm.
  */
-public class ReRandElGamalEngine implements ReRandAsymmetricBlockCipher {
+public class ReRandElGamalEngine implements be.heydari.elgamal.ReRandAsymmetricBlockCipher {
     private static final Logger LOGGER = LoggerFactory.getLogger(ReRandElGamalEngine.class);
 
 
